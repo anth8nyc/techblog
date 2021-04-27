@@ -3,13 +3,14 @@ const newCommentHandler = async (event) => {
 
   console.log("comment button pushed");
   const description = document.querySelector("#comment-desc").value.trim();
-
+  const project_id = parseInt(document.location.pathname.split('/')[document.location.pathname.split('/').length-1])
   console.log(description);
+  console.log(project_id);
 
-  if (description) {
+  if (description && project_id) {
     const response = await fetch(`/api/comments`, {
       method: "POST",
-      body: JSON.stringify({ description }),
+      body: JSON.stringify({ description, project_id}),
       headers: {
         "Content-Type": "application/json",
       },

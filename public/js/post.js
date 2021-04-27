@@ -16,7 +16,7 @@ const newCommentHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/project");
+      // document.location.replace(`/project/1`);
     } else {
       alert("Failed to create comment");
     }
@@ -25,9 +25,9 @@ const newCommentHandler = async (event) => {
 
 const delCommHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
-    const id = event.target.getAttribute("data-id");
+    const cid = event.target.getAttribute("data-id");
 
-    const response = await fetch(`/api/comments/${id}`, {
+    const response = await fetch(`/api/comments/${cid}`, {
       method: "DELETE",
     });
 
@@ -43,6 +43,6 @@ document
   .querySelector(".new-comment-form")
   .addEventListener("submit", newCommentHandler);
 
-document
-  .querySelector(".comment-list")
-  .addEventListener("click", delCommHandler);
+// document
+//   .querySelector(".comment-list")
+//   .addEventListener("click", delCommHandler);

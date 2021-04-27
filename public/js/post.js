@@ -1,7 +1,10 @@
-const newFormHandler = async (event) => {
+const newCommentHandler = async (event) => {
   event.preventDefault();
 
+  console.log("comment button pushed");
   const description = document.querySelector("#comment-desc").value.trim();
+
+  console.log(description);
 
   if (description) {
     const response = await fetch(`/api/comments`, {
@@ -20,7 +23,7 @@ const newFormHandler = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
+const delCommHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const id = event.target.getAttribute("data-id");
 
@@ -38,8 +41,8 @@ const delButtonHandler = async (event) => {
 
 document
   .querySelector(".new-comment-form")
-  .addEventListener("submit", newFormHandler);
+  .addEventListener("submit", newCommentHandler);
 
 document
   .querySelector(".comment-list")
-  .addEventListener("click", delButtonHandler);
+  .addEventListener("click", delCommHandler);

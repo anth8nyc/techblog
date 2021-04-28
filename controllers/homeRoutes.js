@@ -43,11 +43,12 @@ router.get('/project/:id', async (req, res) => {
     });
 
     const project = projectData.get({ plain: true });
-    console.log(project)
+    let authorcheck = Boolean(project.user_id === req.session.user_id)
     
     res.render('project', {
       ...project,
       logged_in: req.session.logged_in,
+      author: authorcheck,
     });
   } catch (err) {
     res.status(500).json(err);

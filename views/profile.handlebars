@@ -6,9 +6,10 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Write a New Post:</h3>
+    <button type="submit" class="btn btn-primary postwrite">Write a New Post</button>
 
-    <form class="form new-project-form">
+    <form class="form new-project-form pwriter display-none">
+      <h3>Write a New Post:</h3>
       <div class="form-group">
         <label for="project-name">Post Title:</label>
         <input class="form-input" type="text" id="project-name" name="project-name" />
@@ -39,31 +40,6 @@
       </div>
     </div>
     {{/each}}
-
-    <div>
-      <h3>Update Posts:</h3>
-      <form class="form update-project-form">
-        <div class="form-group">
-          <label for="project-update">Select post to update:</label>
-          <select id="project-update" name="project-update" width="300" style="width: 300px">
-          {{#each projects as |project|}}
-          <option value="{{project.name}}"> {{project.name}} </option>
-          {{/each}}
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="update-name">Post Title:</label>
-          <input class="form-input" type="text" id="update-name" name="update-name" />
-        </div>
-        <div class="form-group">
-          <label for="update-desc">description:</label>
-          <textarea class="form-input" id="update-desc" name="update-desc"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Update</button>
-        </div>
-      </form>
-    </div>
 
 
   </div>

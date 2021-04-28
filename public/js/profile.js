@@ -15,10 +15,12 @@ const newFormHandler = async (event) => {
 
     if (response.ok) {
       document.location.replace('/profile');
-    } else {
+    } else {``
       alert('Failed to create project');
     }
   }
+  postwriter.classList.add('display-none')
+  postwrite.classList.remove('display-none')
 };
 
 const delButtonHandler = async (event) => {
@@ -37,6 +39,18 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const formRender = async (event) => {
+  event.preventDefault();
+  let postwriter = document.querySelector('.pwriter')
+  let postwrite = document.querySelector('.postwrite')
+  postwriter.classList.remove('display-none')
+  postwrite.classList.add('display-none')
+
+}
+
+document
+  .querySelector('.postwrite')
+  .addEventListener('click', formRender);
 document
   .querySelector('.new-project-form')
   .addEventListener('submit', newFormHandler);
@@ -44,3 +58,7 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+document
+  .querySelector('.update-project-form')
+  .addEventListener('submit', updateFormHandler);

@@ -1,5 +1,5 @@
 header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 3px solid #065b83;
 }
 
 .no-button {
@@ -21,4 +21,30 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+}
+
+
+.c-box {
+
+  border-color: #065b83;
+  border-style: outset;
+  border-radius: 15px;
+  padding: 15px;
+
+}
+
+
+.project {
+
+  border-color: #065b83;
+  border-style: outset;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: whitesmoke;
+
+}
+
+.projtitle {
+
+  border-bottom: 3px solid #065b83;
 }

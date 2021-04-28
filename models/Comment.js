@@ -26,6 +26,16 @@ Comment.init(
         key: "id",
       },
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    user_name: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

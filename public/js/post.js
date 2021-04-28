@@ -44,6 +44,6 @@ document
   .querySelector(".new-comment-form")
   .addEventListener("submit", newCommentHandler);
 
-// document
-//   .querySelector(".comment-list")
-//   .addEventListener("click", delCommHandler);
+document
+  .querySelector(".comment-list")
+  .addEventListener("click", delCommHandler);

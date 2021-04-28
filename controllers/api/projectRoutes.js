@@ -37,7 +37,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.update({
+    const projectData = await Project.update(req.body,{
       where: {
         id: req.params.id,
       },

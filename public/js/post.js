@@ -17,7 +17,7 @@ const newCommentHandler = async (event) => {
     });
 
     if (response.ok) {
-      // document.location.replace(`/project/1`);
+      document.location.replace(`/project/${project_id}`);
     } else {
       alert("Failed to create comment");
     }
@@ -27,15 +27,16 @@ const newCommentHandler = async (event) => {
 const delCommHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
     const cid = event.target.getAttribute("data-id");
+    const project_id = parseInt(document.location.pathname.split('/')[document.location.pathname.split('/').length-1])
 
     const response = await fetch(`/api/comments/${cid}`, {
       method: "DELETE",
     });
 
     if (response.ok) {
-      document.location.replace(`/project/${id}`);
+      document.location.replace(`/project/${project_id}`);
     } else {
-      alert("Failed to delete comment");
+      alert("Failed to delete comment! \nRemember you can only delete comments you authored.");
     }
   }
 };

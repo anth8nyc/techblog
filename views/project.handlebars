@@ -36,11 +36,19 @@
       <div class="col-md-2">
         <p>{{comment.user_name}} on {{format_date comment.date_created}}</p>
       </div>
+      <div class="col-md-1">
+        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      </div>
+        
+      
+      {{!-- <div class="col-md-2">
+        <p>{{comment.user_name}} on {{format_date comment.date_created}}</p>
+      </div>
 
 
       <div class="col-md-1">
         <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-      </div>
+      </div> --}}
     </div>
     {{/each}}
   </div>
